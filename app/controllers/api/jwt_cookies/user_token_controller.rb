@@ -5,7 +5,7 @@ module Api
       skip_before_action :verify_authenticity_token
 
       def create
-        cookies.signed[:jwt_cookies] = {value: auth_token.to_json, httponly: true}
+        session[:jwt_cookies] = {value: auth_token.to_json, httponly: true}
         super
       end
     end
