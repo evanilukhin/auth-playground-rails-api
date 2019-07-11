@@ -15,8 +15,8 @@ module Api
       private
 
       def find_user
-        login = session[:user_login]
-        @current_user = User.find_by(login: login)
+        user_id = session[:user_id]
+        @current_user = User.find_by(id: user_id)
       end
     end
   end
