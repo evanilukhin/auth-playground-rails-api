@@ -18,11 +18,10 @@ require "rails/test_unit/railtie"
 Bundler.require(*Rails.groups)
 
 module AuthPlaygroundRailsApi
-  class Application < Rails::Application    
+  class Application < Rails::Application
     config.load_defaults 5.2
     config.api_only = true
-
     config.middleware.use ActionDispatch::Cookies
-    config.middleware.use ActionDispatch::Session::CookieStore
+    config.middleware.use ActionDispatch::Session::CookieStore, expire_after: 7.days
   end
 end

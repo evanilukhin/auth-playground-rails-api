@@ -6,7 +6,7 @@ module Api
 
       def create
         session[:jwt_cookies] = auth_token.to_json
-        super
+        render body: nil, status: :created
       end
     end
   end
