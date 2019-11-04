@@ -6,8 +6,11 @@ and SPA (I have chosen React)
 Execute next commands in your terminal:
 ```sh
 rake db:setup
-rails s -p 3001
+```
+After you must set environment variable `SPA_ORIGIN`. I use gem [Envyable](https://github.com/philnash/envyable) for it. Or you can set up during launching a server
+```sh
+SPA_ORIGIN=localhost:3000 rails s -p 3001
 ```
 ## Cookie
 ## JWT
-## JWT with a previously initialised token
+## JWT+Cookies
